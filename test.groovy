@@ -38,8 +38,7 @@ pipeline {
                             stage('stage1 step3') {
                                 echo "I am in stage 1 step 3"
                             }
-                        } ,
-                        
+                        }
                         stage("stage 2") {
                             stage('stage2 step1') {
                                 echo "I am in stage 2 step 1"
