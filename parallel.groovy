@@ -28,7 +28,7 @@ pipeline {
         }
 
         stage('Skipped Check') {
-            when { false }
+            when { 0==1 }
             steps {
                 echo "This is the Skipped Check"
             }
@@ -52,7 +52,7 @@ pipeline {
                     }
                 }
 
-                stage('P2 Test') {
+                stage('P3 Test') {
                     steps {
                         script {
                             echo "This is simple parallel 3"
@@ -98,7 +98,7 @@ pipeline {
                 }
                 
                 stage('Complex P Skip') {
-                    when { false }
+                    when { 0==1 }
                     steps {
                         script {
                             echo "Complex P Skip"
@@ -125,7 +125,7 @@ pipeline {
                     }
                 }
                 stage('CompX3') {
-                    when { true }
+                    when { 1==1 }
                     stages {
                         stage('CompX3 P1'){
                             steps {
