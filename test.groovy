@@ -12,7 +12,7 @@ def performDeploymentStages(String node, String app) {
 
 pipeline {
     agent {
-        label 'ci_general_utility'
+        label 'master'
     }
     parameters {
         string(name: 'NODES', defaultValue: '1,2,3', description: 'Nodes to build, deploy and test')
