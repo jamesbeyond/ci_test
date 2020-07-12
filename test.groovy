@@ -75,11 +75,6 @@ pipeline {
                             createStage("stage 2")
                         }
                     }
-                    stage("stage 3") {
-                        stages {
-                            createStage("stage 3")
-                        }
-                    }
             }
         }
     }
