@@ -53,8 +53,7 @@ pipeline {
             steps {
                 script {
                     parallel (
-                            "stage 1" : {createStage("stage 1")},
-                            "stage 1" : {createStage2("stage 1")},
+                            "stage 1" : {createStage("stage 1"); createStage2("stage 1")},
                             "stage 2" : {createStage("stage 2")},
                             "stage 3" : {createStage("stage 3")}
                     )
