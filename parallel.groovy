@@ -152,7 +152,7 @@ pipeline {
                                 }
                             }
                         }
-                        stage('CompX3 P2'){
+                        stage('CompX3 P3'){
                             steps {
                                 script {
                                     echo "This is CompX3 P3"
