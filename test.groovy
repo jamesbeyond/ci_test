@@ -30,14 +30,16 @@ pipeline {
                         //}
                     parallel (
                         "stage 1" : {
-                            stage('stage1 step1') {
-                                echo "I am in stage 1 step 1"
-                            }
-                            stage('stage1 step2') {
-                                echo "I am in stage 1 step 2"
-                            }
-                            stage('stage1 step3') {
-                                echo "I am in stage 1 step 3"
+                            stages {
+                                stage('stage1 step1') {
+                                    echo "I am in stage 1 step 1"
+                                }
+                                stage('stage1 step2') {
+                                    echo "I am in stage 1 step 2"
+                                }
+                                stage('stage1 step3') {
+                                    echo "I am in stage 1 step 3"
+                                }
                             }
                         } ,
                         
