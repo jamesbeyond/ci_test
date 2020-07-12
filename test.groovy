@@ -14,8 +14,6 @@ def createStage(sname) {
     stage("${sname} step1") {
         if ( sname == "stage 1" ) {
             echo "I am in ${sname} step 1"
-        } else {
-            echo "I am skipped"
         }
     }
     stage("${sname} step2") {
@@ -50,24 +48,20 @@ pipeline {
                         //    apps[ "${app}" ] = performDeploymentStages("test", app)
                         //}
             parallel {
-                stage("stage 1") {
-                    steps {
-                        script {
-                            createStage("stage 1")
+                script {
+                    stage("stage 1") {
+                        steps {
+                                createStage("stage 1")
                         }
                     }
-                }
-                stage("stage 2") {
-                    steps {
-                        script {
-                            createStage("stage 2")
+                    stage("stage 2") {
+                        steps {
+                                createStage("stage 2")
                         }
                     }
-                }
-                stage("stage 3") {
-                    steps {
-                        script {
-                            createStage("stage 3")
+                    stage("stage 3") {
+                        steps {
+                                createStage("stage 3")
                         }
                     }
                 }
