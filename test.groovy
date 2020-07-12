@@ -72,7 +72,9 @@ pipeline {
                         }
                     }
                     stage("stage 2") {
-                        createStage()
+                        script {
+                            createStage()
+                        }
                     }
             }
         }
