@@ -20,9 +20,7 @@ pipeline {
         string(name: 'APPS', defaultValue: 'app1 app2', description: 'App names')
     }
 
-    stages {
-        stage('parallel stage') {
-            steps {
+
                 script {
                         //def apps = [:]
                         //for (app in params.APPS.tokenize()) {
@@ -49,7 +47,5 @@ pipeline {
                         )
                         
                 }
-            }
-        }
-    }
+
 }
