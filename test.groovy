@@ -12,18 +12,22 @@ def performDeploymentStages(String node, String app) {
 
 def createStage(sname) {
     stage("${sname} step1") {
-        steps (
+        
             if ( sname == "stage 1" ) {
+            steps (
                 echo "I am in ${sname} step 1"
+            )
             }
-        )
+
     };
     stage("${sname} step2") {
-        steps (
+        
             if ( sname == "stage 2" )  {
+            steps (
                 echo "I am in ${sname} step 2"
+            )
             }
-        )
+
     }
 }
 
