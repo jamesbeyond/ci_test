@@ -59,9 +59,11 @@ pipeline {
                     }
                 }
                 stage("stage 3") {
+                    steps {
                         script {
                             createStage("stage 3")
                         }
+                    }
                 }
             }
         }
