@@ -45,21 +45,9 @@ pipeline {
                         //}
             parallel {
                     stage("stage 1") {
-                        stages {
-                            stage('stage1 step1') {
-                                steps {
-                                    echo "I am in stage 1 step 1"
-                                }
-                            }
-                            stage('stage1 step2') {
-                                steps {
-                                    echo "I am in stage 1 step 2"
-                                }
-                            }
-                            stage('stage1 step3') {
-                                steps {
-                                    echo "I am in stage 1 step 3"
-                                }
+                        steps {
+                            script {
+                                createStage("stage 1")
                             }
                         }
                     }
