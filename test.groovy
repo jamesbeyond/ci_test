@@ -24,11 +24,18 @@ pipeline {
         stage('parallel stage') {
             steps {
                 script {
-                        def apps = [:]
-                        for (app in params.APPS.tokenize()) {
-                            apps[ "${app}" ] = performDeploymentStages("test", app)
+                        //def apps = [:]
+                        //for (app in params.APPS.tokenize()) {
+                        //    apps[ "${app}" ] = performDeploymentStages("test", app)
+                        //}
+                        parallel {
+                            stage("stage 1") {
+                                echo "I am in stage 1"
+                            }
+                            stage("stage 2") {
+                                echo "I am in stage 1"
+                            }
                         }
-                        parallel apps
                         
                 }
             }
