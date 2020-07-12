@@ -11,7 +11,7 @@ def performDeploymentStages(String node, String app) {
 }
 
 def createStage(sname) {
-    return [
+    steps(
         "${sname} step1" : {
             if ( sname == "stage 1" ) {
                 echo "I am in ${sname} step 1"
@@ -25,7 +25,7 @@ def createStage(sname) {
         "${sname} step3" : {
                 echo "I am in ${sname} step 3"
         }
-    ]
+    )
 }
 
 pipeline {
