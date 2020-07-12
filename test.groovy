@@ -15,25 +15,21 @@ pipeline {
         label 'master'
     }
     parameters {
-        string(name: 'NODES', defaultValue: '1,2,3', description: 'Nodes to build, deploy and test')
+        string(name: 'NODES', defaultValue: '1 2 3', description: 'Nodes to build, deploy and test')
         choice(name: 'ENV', choices: 'qa', description: 'Environment')
-        string(name: 'APPS', defaultValue: 'app01,app02', description: 'App names')
+        string(name: 'APPS', defaultValue: 'app1 app2', description: 'App names')
     }
 
     stages {
         stage('parallel stage') {
             steps {
                 script {
-                    def nodes = [:]
-                    for (node in params.NODES.tokenize(',')) {
                         def apps = [:]
-                        for (app in params.APPS.tokenize(',')) {
+                        for (app in params.APPS.tokenize()) {
                             apps[ "${app}" ] = performDeploymentStages(node, app)
                         }
                         parallel apps
                         
-                    }
-                    parallel nodes
                 }
             }
         }
