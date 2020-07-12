@@ -26,7 +26,7 @@ pipeline {
                 script {
                         def apps = [:]
                         for (app in params.APPS.tokenize()) {
-                            apps[ "${app}" ] = performDeploymentStages( app)
+                            apps[ "${app}" ] = performDeploymentStages("test", app)
                         }
                         parallel apps
                         
