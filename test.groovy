@@ -47,22 +47,24 @@ pipeline {
                         //for (app in params.APPS.tokenize()) {
                         //    apps[ "${app}" ] = performDeploymentStages("test", app)
                         //}
-            parallel {
+            steps {
                 script {
-                    stage("stage 1") {
-                        steps {
-                                createStage("stage 1")
-                        }
-                    }
-                    stage("stage 2") {
-                        steps {
-                                createStage("stage 2")
-                        }
-                    }
-                    stage("stage 3") {
-                        steps {
-                                createStage("stage 3")
-                        }
+                    parallel {
+                            stage("stage 1") {
+                                steps {
+                                        createStage("stage 1")
+                                }
+                            }
+                            stage("stage 2") {
+                                steps {
+                                        createStage("stage 2")
+                                }
+                            }
+                            stage("stage 3") {
+                                steps {
+                                        createStage("stage 3")
+                                }
+                            }
                     }
                 }
             }
