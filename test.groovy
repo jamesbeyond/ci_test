@@ -54,12 +54,12 @@ pipeline {
                                 steps {
                                         createStage("stage 1")
                                 }
-                            }
+                            },
                             "stage 2" : {
                                 steps {
                                         createStage("stage 2")
                                 }
-                            }
+                            },
                             "stage 3": {
                                 steps {
                                         createStage("stage 3")
