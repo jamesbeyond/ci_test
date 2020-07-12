@@ -11,21 +11,21 @@ def performDeploymentStages(String node, String app) {
 }
 
 def createStage(sname) {
-    pipeline {
-        step("${sname} step1") {
+    pipeline (
+        "${sname} step1" : {
             if ( sname == "stage 1" ) {
                 echo "I am in ${sname} step 1"
             }
-        }
-        step("${sname} step2") {
+        },
+        "${sname} step2" : {
             if ( sname == "stage 2" )  {
                 echo "I am in ${sname} step 2"
             }
-        }
-        stage("${sname} step3") {
+        },
+        "${sname} step3" : {
                 echo "I am in ${sname} step 3"
         }
-    }
+    )
 }
 
 pipeline {
