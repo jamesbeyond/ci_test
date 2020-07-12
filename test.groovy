@@ -49,11 +49,11 @@ pipeline {
                         //}
             steps {
                 script {
-                    parallel [
+                    parallel (
                             "stage 1" : createStage("stage 1"),
                             "stage 2" : createStage("stage 2"),
                             "stage 3" : createStage("stage 3")
-                    ]
+                    )
                 }
             }
         }
