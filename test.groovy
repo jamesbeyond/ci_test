@@ -44,20 +44,25 @@ pipeline {
                         //    apps[ "${app}" ] = performDeploymentStages("test", app)
                         //}
             parallel {
-                    stage("stage 1") {
-                        steps {
-                            script {
-                                createStage("stage 1")
-                            }
+                stage("stage 1") {
+                    steps {
+                        script {
+                            createStage("stage 1")
                         }
                     }
-                    stage("stage 2") {
-                        steps {
-                            script {
-                                createStage("stage 2")
-                            }
+                }
+                stage("stage 2") {
+                    steps {
+                        script {
+                            createStage("stage 2")
                         }
                     }
+                }
+                stage("stage 3") {
+                        script {
+                            createStage("stage 3")
+                        }
+                }
             }
         }
     }
