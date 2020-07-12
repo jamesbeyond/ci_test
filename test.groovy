@@ -11,7 +11,7 @@ def performDeploymentStages(String node, String app) {
 }
 
 def createStage(sname) {
-    (
+    return (
         "${sname} step1" : {
             if ( sname == "stage 1" ) {
                 echo "I am in ${sname} step 1"
