@@ -71,7 +71,21 @@ pipeline {
                     }
                     stage("stage 2") {
                         stages {
-                            createStage()
+                            stage('stage2 step1') {
+                                steps {
+                                    echo "I am in stage 1 step 1"
+                                }
+                            }
+                            stage('stage2 step2') {
+                                steps {
+                                    echo "I am in stage 1 step 2"
+                                }
+                            }
+                            stage('stage2 step3') {
+                                steps {
+                                    echo "I am in stage 1 step 3"
+                                }
+                            }
                         }
                     }
             }
