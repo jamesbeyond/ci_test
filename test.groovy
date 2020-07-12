@@ -1,10 +1,10 @@
 def performDeploymentStages(String node, String app) {
     stage("build") {
         echo "Building the app [${app}] on node [${node}]"
-    }
+    };
     stage("deploy") {
         echo "Deploying the app ${app}] on node [${node}]"
-    }
+    };
     stage("test") {
         echo "Testing the app [${app}] on node [${node}]"
     }
