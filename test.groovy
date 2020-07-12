@@ -50,17 +50,17 @@ pipeline {
             steps {
                 script {
                     parallel {
-                            stage("stage 1") {
+                            "stage 1" : {
                                 steps {
                                         createStage("stage 1")
                                 }
                             }
-                            stage("stage 2") {
+                            "stage 2" : {
                                 steps {
                                         createStage("stage 2")
                                 }
                             }
-                            stage("stage 3") {
+                            "stage 3": {
                                 steps {
                                         createStage("stage 3")
                                 }
