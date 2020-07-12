@@ -10,21 +10,21 @@ def performDeploymentStages(String node, String app) {
     }
 }
 
-def createStage( String name ) {
+def createStage(sname) {
 
-    stage("${name} step1") {
+    stage("${sname} step1") {
         steps {
-            echo "I am in ${name} step 1"
+            echo "I am in ${sname} step 1"
         }
     }
-    stage("${name} step2") {
+    stage("${sname} step2") {
         steps {
-            echo "I am in ${name} step 2"
+            echo "I am in ${sname} step 2"
         }
     }
-    stage("${name}  step3") {
+    stage("${sname}  step3") {
         steps {
-            echo "I am in ${name} step 3"
+            echo "I am in ${sname} step 3"
         }
     }
 }
