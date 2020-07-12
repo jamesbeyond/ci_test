@@ -20,7 +20,10 @@ def createStage(sname) {
         if ( sname == "stage 2" )  {
             echo "I am in ${sname} step 2"
         }
-    };
+    }
+}
+
+def createStage2(sname) {
     stage("${sname} step3") {
             echo "I am in ${sname} step 3"
     }
@@ -50,9 +53,9 @@ pipeline {
             steps {
                 script {
                     parallel (
-                            "stage 1" : {createStage("stage 1")},
-                            "stage 2" : {createStage("stage 2")},
-                            "stage 3" : {createStage("stage 3")}
+                            "stage 1" : {createStage("stage 1"), createStage2("stage 1")},
+                            "stage 2" : {createStage("stage 2"), createStage2("stage 2")},
+                            "stage 3" : {createStage("stage 3"), createStage2("stage 3")}
                     )
                 }
             }
