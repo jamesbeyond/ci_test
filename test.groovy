@@ -28,7 +28,7 @@ pipeline {
                     for (node in params.NODES.tokenize(',')) {
                         def apps = [:]
                         for (app in params.APPS.tokenize(',')) {
-                            apps[ app + nodes ] = performDeploymentStages(node, app)
+                            apps[ "${app}" ] = performDeploymentStages(node, app)
                         }
                         parallel apps
                         
