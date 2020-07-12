@@ -22,7 +22,7 @@ pipeline {
 
     stages {
         stage('parallel stage') {
-            steps {
+
                 script {
                         //def apps = [:]
                         //for (app in params.APPS.tokenize()) {
@@ -57,7 +57,7 @@ pipeline {
                     )
                         
                 }
-            }
+
         }
     }
 }
