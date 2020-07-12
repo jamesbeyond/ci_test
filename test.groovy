@@ -10,15 +10,15 @@ def performDeploymentStages(String node, String app) {
     }
 }
 
-def createStage() {
-    stage('stage2 step1') {
-            echo "I am in stage 2 step 1"
+def createStage(sname) {
+    stage('${sname} step1') {
+            echo "I am in ${sname} step 1"
     }
-    stage('stage2 step2') {
-            echo "I am in stage 2 step 2"
+    stage('${sname} step2') {
+            echo "I am in ${sname} step 2"
     }
-    stage('stage2 step3') {
-            echo "I am in stage 2 step 3"
+    stage('${sname} step3') {
+            echo "I am in ${sname} step 3"
     }
 }
 
@@ -66,7 +66,7 @@ pipeline {
                     stage("stage 2") {
                         steps {
                             script {
-                                createStage()
+                                createStage("stage 2")
                             }
                         }
                     }
