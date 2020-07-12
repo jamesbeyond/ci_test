@@ -28,14 +28,15 @@ pipeline {
                         //for (app in params.APPS.tokenize()) {
                         //    apps[ "${app}" ] = performDeploymentStages("test", app)
                         //}
-                        parallel ({
-                            stage("stage 1") {
+                        parallel {
+                            "stage 1" : {
+                                echo "I am in stage 1"
+                            } ,
+                            
+                            "stage 2" : {
                                 echo "I am in stage 1"
                             }
-                            stage("stage 2") {
-                                echo "I am in stage 1"
-                            }
-                        })
+                        }
                         
                 }
             }
