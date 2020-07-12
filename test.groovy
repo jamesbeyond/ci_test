@@ -27,26 +27,28 @@ pipeline {
                         //    apps[ "${app}" ] = performDeploymentStages("test", app)
                         //}
             parallel {
-                stage("stage 1") {
-                    stage('stage1 step1') {
-                        echo "I am in stage 1 step 1"
+                steps {
+                    stage("stage 1") {
+                        stage('stage1 step1') {
+                                echo "I am in stage 1 step 1"
+                        }
+                        stage('stage1 step2') {
+                            echo "I am in stage 1 step 2"
+                        }
+                        stage('stage1 step3') {
+                            echo "I am in stage 1 step 3"
+                        }
                     }
-                    stage('stage1 step2') {
-                        echo "I am in stage 1 step 2"
-                    }
-                    stage('stage1 step3') {
-                        echo "I am in stage 1 step 3"
-                    }
-                }
-                stage("stage 2") {
-                    stage('stage2 step1') {
-                        echo "I am in stage 2 step 1"
-                    };
-                    stage('stage2 step2') {
-                        echo "I am in stage 2 step 2"
-                    };
-                    stage('stage2 step3') {
-                        echo "I am in stage 2 step 3"
+                    stage("stage 2") {
+                        stage('stage2 step1') {
+                            echo "I am in stage 2 step 1"
+                        };
+                        stage('stage2 step2') {
+                            echo "I am in stage 2 step 2"
+                        };
+                        stage('stage2 step3') {
+                            echo "I am in stage 2 step 3"
+                        }
                     }
                 }
             }
