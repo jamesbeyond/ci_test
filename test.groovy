@@ -14,7 +14,9 @@ def createStage(sname) {
     stage("${sname} step1") {
         if ( sname == "stage 1" ) {
             echo "I am in ${sname} step 1"
-            }
+        } else {
+            echo "I am skipped"
+        }
     }
     stage("${sname} step2") {
         if ( sname == "stage 2" )  {
