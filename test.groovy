@@ -11,31 +11,31 @@ def performDeploymentStages(String node, String app) {
 }
 
 def createStage(sname) {
-    stage("${sname} step1") {
-        
-            if ( sname == "stage 1" ) {
-            steps (
-                echo "I am in ${sname} step 1"
-            )
-            }
+    stages{
+        stage("${sname} step1") {
+            
+                if ( sname == "stage 1" ) {
+                steps (
+                    echo "I am in ${sname} step 1"
+                )
+                }
 
-    };
-    stage("${sname} step2") {
-        
-            if ( sname == "stage 2" )  {
-            steps (
-                echo "I am in ${sname} step 2"
-            )
-            }
+        }
+        stage("${sname} step2") {
+            
+                if ( sname == "stage 2" )  {
+                steps (
+                    echo "I am in ${sname} step 2"
+                )
+                }
 
-    }
-}
-
-def createStage2(sname) {
-    stage("${sname} step3") {
+        }
+        stage("${sname} step3") {
             echo "I am in ${sname} step 3"
+        }
     }
 }
+
 
 pipeline {
     agent {
@@ -59,12 +59,12 @@ pipeline {
                         //    apps[ "${app}" ] = performDeploymentStages("test", app)
                         //}
             steps {
-                script {
-                    parallel (
-                            "stage 1" : {createStage("stage 1"); createStage2("stage 1")},
-                            "stage 2" : {createStage("stage 2")},
-                            "stage 3" : {createStage("stage 3")}
-                    )
+                parallel {
+                    script {
+                        stage("stage 1"){createStage("stage 1")}
+                        stage("stage 2"){createStage("stage 2")}
+                        stage("stage 3"){createStage("stage 3")}
+                    }
                 }
             }
         }

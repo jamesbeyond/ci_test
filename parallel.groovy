@@ -84,6 +84,14 @@ pipeline {
                 }
             }
         }
+        
+        stage('Failed') {
+            steps {
+                script {
+                build("unit-test-job")
+                }
+            }
+        }
 
         stage('Complex parallel') {
             parallel {
