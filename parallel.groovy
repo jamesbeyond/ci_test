@@ -88,7 +88,7 @@ pipeline {
         stage('Failed') {
             steps {
                 script {
-                build("unit-test-job")
+                build("ci_test")
                 }
             }
         }
