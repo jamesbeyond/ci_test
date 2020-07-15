@@ -57,7 +57,7 @@ pipeline {
                 stage('P1 Test') {
                     steps {
                         script {
-                            echo "This is simple parallel 1"
+                            createStage("stage 1")
                         }
                     }
                 }
@@ -65,7 +65,7 @@ pipeline {
                 stage('P2 Test') {
                     steps {
                         script {
-                            echo "This is simple parallel 2"
+                            createStage("stage 1")
                         }
                     }
                 }
@@ -73,7 +73,7 @@ pipeline {
                 stage('P3 Test') {
                     steps {
                         script {
-                            echo "This is simple parallel 3"
+                            createStage("stage 1")
                         }
                     }
                 }
