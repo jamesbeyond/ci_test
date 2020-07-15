@@ -85,7 +85,7 @@ pipeline {
             }
         }
         
-        stage('Failed') {
+        stage('Build Other Failed') {
             steps {
                 script {
                 build("ci_test")
