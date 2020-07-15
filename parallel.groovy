@@ -66,7 +66,9 @@ pipeline {
             steps {
                 script {
                     echo "This is Gap"
-                    sh('false')
+                    warnError('Script failed!') {
+                        sh('false')
+                    }
                 }
             }
         }
