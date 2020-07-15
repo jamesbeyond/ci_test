@@ -53,13 +53,28 @@ pipeline {
             }
         }
         stage('parallel stage') {
-            steps {
-                echo "This is the parallel"
-                parallel {
-                    script {
-                        stage("stage 1"){createStage("stage 1")}
-                        stage("stage 2"){createStage("stage 2")}
-                        stage("stage 3"){createStage("stage 3")}
+            parallel {
+                stage('P1 Test') {
+                    steps {
+                        script {
+                            echo "This is simple parallel 1"
+                        }
+                    }
+                }
+
+                stage('P2 Test') {
+                    steps {
+                        script {
+                            echo "This is simple parallel 2"
+                        }
+                    }
+                }
+
+                stage('P3 Test') {
+                    steps {
+                        script {
+                            echo "This is simple parallel 3"
+                        }
                     }
                 }
             }
