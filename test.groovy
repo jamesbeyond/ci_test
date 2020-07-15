@@ -53,10 +53,6 @@ pipeline {
             }
         }
         stage('parallel stage') {
-                        //def apps = [:]
-                        //for (app in params.APPS.tokenize()) {
-                        //    apps[ "${app}" ] = performDeploymentStages("test", app)
-                        //}
             steps {
                 parallel {
                     script {
