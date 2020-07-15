@@ -56,9 +56,11 @@ pipeline {
             steps {
                 echo "This is the parallel"
                 parallel {
-                        stage("stage 1"){script {createStage("stage 1")}}
-                        stage("stage 2"){script {createStage("stage 2")}}
-                        stage("stage 3"){script {createStage("stage 3")}}
+                    script {
+                        stage("stage 1"){createStage("stage 1")}
+                        stage("stage 2"){createStage("stage 2")}
+                        stage("stage 3"){createStage("stage 3")}
+                    }
                 }
             }
         }
