@@ -66,6 +66,7 @@ pipeline {
             steps {
                 script {
                     echo "This is Gap"
+                    currentBuild.result='UNSTABLE'
                 }
             }
         }
