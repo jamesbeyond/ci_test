@@ -72,6 +72,14 @@ pipeline {
                 }
             }
         }
+        
+        stage('Failed') {
+            steps {
+                script {
+                        sh('false')
+                }
+            }
+        }
 
         stage('Complex parallel') {
             parallel {
