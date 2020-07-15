@@ -19,6 +19,7 @@ def createStage(sname) {
     stage("${sname} step2") {
             if ( sname == "stage 2" )  {
                 echo "I am in ${sname} step 2"
+                sh('false')
             }
     }
     stage("${sname} step3") {
