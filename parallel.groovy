@@ -76,7 +76,11 @@ pipeline {
         stage('Failed') {
             steps {
                 script {
-                        sh('false')
+                    try {
+                      sh('false')
+                    } catch (ex) {
+                      unstable('Script failed!')
+                    }
                 }
             }
         }
