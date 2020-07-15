@@ -54,10 +54,11 @@ pipeline {
         }
         stage('parallel stage') {
                 parallel {
-                    script {
-                        stage("stage 1"){createStage("stage 1")}
-                        stage("stage 2"){createStage("stage 2")}
-                        stage("stage 3"){createStage("stage 3")}
+                    stages{
+                            stage("stage 1"){script {createStage("stage 1")}}
+                            stage("stage 2"){script {createStage("stage 2")}}
+                            stage("stage 3"){script {createStage("stage 3")}}
+                        }
                     }
                 }
         }
