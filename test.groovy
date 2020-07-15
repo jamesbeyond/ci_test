@@ -65,7 +65,7 @@ pipeline {
                 stage('P2 Test') {
                     steps {
                         script {
-                            createStage("stage 1")
+                            createStage("stage 2")
                         }
                     }
                 }
@@ -73,7 +73,7 @@ pipeline {
                 stage('P3 Test') {
                     steps {
                         script {
-                            createStage("stage 1")
+                            createStage("stage 3")
                         }
                     }
                 }
