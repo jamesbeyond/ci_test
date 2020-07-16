@@ -88,7 +88,9 @@ pipeline {
         stage('Build Other Failed') {
             steps {
                 script {
-                build(job: "ci_test", propagate: false)
+                warnError('!!!!!Script failed!!!!!!') {
+                    build(job: "ci_test")
+                }
                 }
             }
         }
