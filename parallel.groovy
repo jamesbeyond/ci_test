@@ -89,7 +89,7 @@ pipeline {
             steps {
                 script {
                 warnError('!!!!!Script failed!!!!!!') {
-                    build(job: "ci_test", propagate: false)
+                    build(job: "ci_test")
                 }
                 }
             }
