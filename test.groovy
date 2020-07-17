@@ -42,6 +42,7 @@ pipeline {
         stage('Start') {
             steps {
                 echo "This is the start"
+                sh "ls -al"
             }
         }
         stage('parallel stage') {
