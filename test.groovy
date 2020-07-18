@@ -43,7 +43,11 @@ pipeline {
             steps {
                 script {
                     echo "This is the start"
-                    sh script:"ls -al", label: "LIST FILE"
+                    sh script: """
+                        ls -al
+                        pwd
+                        printenv
+                    """, label: "LIST FILE AND SHOW ENV"
                 }
             }
         }
