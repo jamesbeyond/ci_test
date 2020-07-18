@@ -42,7 +42,7 @@ pipeline {
         stage('Start') {
             steps {
                 echo "This is the start"
-                sh cmd:"ls -al", name: "LIST FILE"
+                sh cmd:"ls -al", lable: "LIST FILE"
             }
         }
         stage('parallel stage') {
