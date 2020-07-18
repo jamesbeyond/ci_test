@@ -41,8 +41,10 @@ pipeline {
     stages {
         stage('Start') {
             steps {
-                echo "This is the start"
-                sh script:"ls -al", label: "LIST FILE"
+                script {
+                    echo "This is the start"
+                    sh script:"ls -al", label: "LIST FILE"
+                }
             }
         }
         stage('parallel stage') {
