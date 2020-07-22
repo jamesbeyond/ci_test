@@ -61,7 +61,7 @@ pipeline {
         stage('Start') {
             steps {
                 script {
-                    echo message: "This is the start", label: "DISPLAY START"
+                    echo "This is the start"
                     sh script: """
                         ls -al
                         pwd
