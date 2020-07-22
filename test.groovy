@@ -27,6 +27,25 @@ def createStage(sname) {
     }
 }
 
+def createSriptStage(sname) {
+    return {
+        stage("${sname} step1") {
+                if ( sname == "stage 1" ) {
+                    echo "I am in ${sname} step 1"
+                }
+        }
+        stage("${sname} step2") {
+                if ( sname == "stage 2" )  {
+                    echo "I am in ${sname} step 2"
+                    currentBuild.result = 'UNSTABLE'
+                }
+        }
+        stage("${sname} step3") {
+            echo "I am in ${sname} step 3"
+        }
+    }
+}
+
 
 pipeline {
     agent {
@@ -76,6 +95,16 @@ pipeline {
                         }
                     }
                 }
+            }
+        }
+
+        stage('2 parallel stage') {
+            script {
+                def pbuild = [:]
+                ['stage 1','stage 2','stage 3'].each { st ->
+                    pbuild["$st"] = createSriptStage(st)
+                }
+                parallel pbuild
             }
         }
     }
