@@ -28,14 +28,16 @@ def createStage(sname) {
 
 def createSriptStage(sname) {
     return {
-        stage("${sname} step1") {
-            echo "I am in ${sname} step 1"
-        }
-        stage("${sname} step2") {
-            echo "I am in ${sname} step 2"
-        }
-        stage("${sname} step3") {
-            echo "I am in ${sname} step 3"
+        stages {
+            stage("${sname} step1") {
+                echo "I am in ${sname} step 1"
+            }
+            stage("${sname} step2") {
+                echo "I am in ${sname} step 2"
+            }
+            stage("${sname} step3") {
+                echo "I am in ${sname} step 3"
+            }
         }
     }
 }
