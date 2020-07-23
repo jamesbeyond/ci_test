@@ -29,19 +29,21 @@ def createStage(sname) {
 def createSriptStage(sname) {
     return {
         stage("all") {
-            node ("master"){
-                stage("${sname} step1") {
-                    echo "I am in ${sname} step 1"
+            parallel {
+                node ("master"){
+                    stage("${sname} step1") {
+                        echo "I am in ${sname} step 1"
+                    }
                 }
-            }
-            node ("master"){
-                stage("${sname} step2") {
-                    echo "I am in ${sname} step 2"
+                node ("master"){
+                    stage("${sname} step2") {
+                        echo "I am in ${sname} step 2"
+                    }
                 }
-            }
-            node ("master"){
-                stage("${sname} step3") {
-                    echo "I am in ${sname} step 3"
+                node ("master"){
+                    stage("${sname} step3") {
+                        echo "I am in ${sname} step 3"
+                    }
                 }
             }
         }
