@@ -99,12 +99,14 @@ pipeline {
         }
 
         stage('2 parallel stage') {
-            script {
-                def pbuild = [:]
-                ['stage 1','stage 2','stage 3'].each { st ->
-                    pbuild["$st"] = createSriptStage(st)
+            steps {
+                script {
+                    def pbuild = [:]
+                    ['stage S1','stage S2','stage S3'].each { st ->
+                        pbuild["$st"] = createSriptStage(st)
+                    }
+                    parallel pbuild
                 }
-                parallel pbuild
             }
         }
     }
