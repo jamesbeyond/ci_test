@@ -28,7 +28,7 @@ def createStage(sname) {
 
 def createSriptStage(sname) {
     return {
-        stages {
+        stage("all") {
             stage("${sname} step1") {
                 echo "I am in ${sname} step 1"
             }
