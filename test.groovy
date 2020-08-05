@@ -1,3 +1,4 @@
+import groovy.json.JsonOutput
 def performDeploymentStages(String node, String app) {
     stage("build") {
         echo "Building the app [${app}] on node [${node}]"
@@ -71,6 +72,9 @@ pipeline {
                     aValueMap["Key2"] = "Value2"
                     aValueMap["Key3"] = "Value3"
                     println(aValueMap.getClass())
+                    println("value map is ${aValueMap}")
+                    print(JsonOutput.prettyPrint(JsonOutput.toJson(aValueMap)))
+                    
                     
                 }
             }
