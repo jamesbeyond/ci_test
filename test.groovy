@@ -66,6 +66,12 @@ pipeline {
                         pwd
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
+                    def aValueMap = [:]
+                    aValueMap["Key1"] = "Value1"
+                    aValueMap["Key2"] = "Value2"
+                    aValueMap["Key3"] = "Value3"
+                    println(aValueMap.getClass())
+                    
                 }
             }
         }
