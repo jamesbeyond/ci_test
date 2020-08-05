@@ -72,7 +72,11 @@ pipeline {
                     aValueMap["Key2"] = "Value2"
                     aValueMap["Key3"] = "Value3"
                     println(aValueMap.getClass())
+                    println("------------------------------------------------------------")
+                    println("The value of aValueMap")
+                    println("------------------------------------------------------------")
                     println("value map is ${aValueMap}")
+                    println("------------------------------------------------------------")
                     print(JsonOutput.prettyPrint(JsonOutput.toJson(aValueMap)))
                     
                     
