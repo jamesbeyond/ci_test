@@ -46,12 +46,12 @@ def createSriptStage(sname) {
     }
 }
 
-def prettyPrintMap(description, aMap, isRcrusive = false ) {
+def prettyPrintMap(description, aMap, isRcrusive = false, recuPad = "" ) {
     def output = description + "\n[\n"
-    def padding = "    "
+    def padding = "    " + recuPad
     aMap.each{ k, v ->
         if (v instanceof LinkedHashMap) {
-            output += prettyPrintMap(k.toString() + " : " , v , true )
+            output += prettyPrintMap(k.toString() + " : " , v , true , padding )
         } else {
             output += padding + k.toString() + " : " + v.toString() + "\n"
         }
