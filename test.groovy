@@ -79,9 +79,11 @@ pipeline {
                     print("------------------------------------------------------------\n")
                     //print(JsonOutput.prettyPrint(JsonOutput.toJson(aValueMap)))
                     //
-                    def text = "Start\n"
-                    aValueMap.each{ k, v -> text+= k.toString() + " : " + v.toString()  }
+                    def text = "This the contents of \n[\n"
+                    def padding = "    "
+                    aValueMap.each{ k, v -> text+= padding + k.toString() + " : " + v.toString() + "\n" }
                     print("------------------------------------------------------------\n")
+                    text += "]\n\n"
                     print(text)
                     
                     
