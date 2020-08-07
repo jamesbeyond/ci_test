@@ -46,8 +46,8 @@ def createSriptStage(sname) {
     }
 }
 
-def prettyPrintMap(description, aMap, isRcrusive = false, recuPad = "" ) {
-    def output = description + "\n[\n"
+def prettyPrintMap(description, aMap, isRecursive = false , recuPad = "" ) {
+    def output = recuPad + description + "\n" + recuPad + "[\n"
     def padding = "    " + recuPad
     aMap.each{ k, v ->
         if (v instanceof LinkedHashMap) {
@@ -56,13 +56,14 @@ def prettyPrintMap(description, aMap, isRcrusive = false, recuPad = "" ) {
             output += padding + k.toString() + " : " + v.toString() + "\n"
         }
     }
-    output += "]\n\n"
-    if (!isRcrusive) {
+    output += recuPad + "]\n\n"
+    if (!isRecursive) {
         print(output)
     } else {
         return output
     }
 }
+
 pipeline {
     agent {
         label 'master'
