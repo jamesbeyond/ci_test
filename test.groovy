@@ -46,7 +46,7 @@ def createSriptStage(sname) {
     }
 }
 
-def prettyPrintMap(description, aMap, isRecursive = false , recuPad = "" ) {
+def prettyPrintMap(description, aMap, isRecursive = false, recuPad = "" ) {
     def output = recuPad + description + "\n" + recuPad + "[\n"
     def padding = "    " + recuPad
     aMap.each{ k, v ->
@@ -63,7 +63,6 @@ def prettyPrintMap(description, aMap, isRecursive = false , recuPad = "" ) {
         return output
     }
 }
-
 pipeline {
     agent {
         label 'master'
@@ -85,10 +84,16 @@ pipeline {
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
                     def aValueMap = [
-                        Key1 : "Value1",
-                        Key2 : [ 
+                        Key1 : [
                             subKey1 : "some value",
-                            subKey2 : "some value",
+                            subKey2 : [
+                                complexKey3 : [ "some value", "other value"],
+                                complexKey4 : { size -> size == 1 },
+                            ],
+                        ],
+                        Key2 : [ 
+                            subKey3 : "some value",
+                            subKey4 : "some value",
                         ],
                         Key3 : { size -> size == 1 }
                     ]
