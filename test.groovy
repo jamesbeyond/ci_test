@@ -68,9 +68,12 @@ pipeline {
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
                     def aValueMap = [
-                    Key1 : "Value1",
-                    Key2 : "Value2",
-                    Key3 : { size -> size == 1 }
+                        Key1 : "Value1",
+                        Key2 : [ 
+                            subKey1 : "some value",
+                            subKey2 : "some value",
+                        ],
+                        Key3 : { size -> size == 1 }
                     ]
                     println(aValueMap.getClass())
                     print("value map is ${aValueMap}\n")
