@@ -46,7 +46,15 @@ def createSriptStage(sname) {
     }
 }
 
-
+def prettyPrintMap(description, aMap, isRcrusive = false ) {
+    def output = description + "\n[\n"
+    def padding = "    "
+    aValueMap.each{ k, v -> output+= padding + k.toString() + " : " + v.toString() + "\n" }
+    output += "]\n\n"
+    if !(isRcrusive) {
+        print(output)
+    }
+}
 pipeline {
     agent {
         label 'master'
@@ -78,19 +86,8 @@ pipeline {
                     println(aValueMap.getClass())
                     print("value map is ${aValueMap}\n")
                     print("------------------------------------------------------------\n")
-                    print("The value of aValueMap\n")
-                    print("------------------------------------------------------------\n")
                     //print(JsonOutput.prettyPrint(JsonOutput.toJson(aValueMap)))
-                    //
-                    def text = "This the contents of \n[\n"
-                    def padding = "    "
-                    aValueMap.each{ k, v -> text+= padding + k.toString() + " : " + v.toString() + "\n" }
-                    print("------------------------------------------------------------\n")
-                    text += "]\n\n"
-                    print(text)
-                    
-                    
-                    
+                    prettyPrintMap("This the contents of a map structure", aValueMap)
                 }
             }
         }
