@@ -80,7 +80,7 @@ pipeline {
                     //print(JsonOutput.prettyPrint(JsonOutput.toJson(aValueMap)))
                     //
                     def text = "Start\n"
-                    aValueMap.each{ k, v -> text+= "$k" }
+                    aValueMap.each{ k, v -> text+= k.toString() + " : " + v.toString()  }
                     print("------------------------------------------------------------\n")
                     print(text)
                     
