@@ -70,7 +70,7 @@ pipeline {
                     def aValueMap = [
                     Key1 : "Value1",
                     Key2 : "Value2",
-                    Key3 : "Value3",
+                    Key3 : { size -> size == 1 }
                     ]
                     println(aValueMap.getClass())
                     print("value map is ${aValueMap}\n")
