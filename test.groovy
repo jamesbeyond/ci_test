@@ -51,7 +51,7 @@ def prettyPrintMap(description, aMap, isRcrusive = false ) {
     def padding = "    "
     aValueMap.each{ k, v -> output+= padding + k.toString() + " : " + v.toString() + "\n" }
     output += "]\n\n"
-    if !(isRcrusive) {
+    if (!isRcrusive) {
         print(output)
     }
 }
