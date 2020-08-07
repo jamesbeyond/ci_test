@@ -49,10 +49,18 @@ def createSriptStage(sname) {
 def prettyPrintMap(description, aMap, isRcrusive = false ) {
     def output = description + "\n[\n"
     def padding = "    "
-    aMap.each{ k, v -> output+= padding + k.toString() + " : " + v.toString() + "\n" }
+    aMap.each{ k, v ->
+        if (v instanceof LinkedHashMap) {
+            output += prettyPrintMap(k.toString() + " : " , v , true )
+        } else {
+            output += padding + k.toString() + " : " + v.toString() + "\n"
+        }
+    }
     output += "]\n\n"
     if (!isRcrusive) {
         print(output)
+    } else {
+        return output
     }
 }
 pipeline {
