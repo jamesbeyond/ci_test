@@ -103,6 +103,7 @@ pipeline {
                     println(newitem.getClass())
                     //prettyPrintMap("This the new item", newitem)
                     print("------------------------------------------------------------\n")
+                    print("TRY something new\n")
                 }
             }
         }
