@@ -8,7 +8,6 @@ pipeline {
         dkr = load "common.groovy"
         FIRST = dkr.first()
         SECOND = dkr.second()
-        FUNC = dkr.func()
     }
     stages {
         stage('Start') {
@@ -22,7 +21,10 @@ pipeline {
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
                     echo " First is ${FIRST}, second is ${SECOND}"
-                    FUNC()
+                    println dkr.getClass()
+                    println ${dkr}.getClass()
+                    println "${dkr}".getClass()
+                    
                 }
             }
         }
