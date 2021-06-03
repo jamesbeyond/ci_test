@@ -1,6 +1,6 @@
 
-
-
+def first
+def second
 
 pipeline {
     agent {
@@ -12,8 +12,8 @@ pipeline {
             steps {
                 script {
                     dkr = load "common.groovy"
-                    def first= dkr.first()
-                    def second= dkr.second()
+                    first= dkr.first()
+                    second= dkr.second()
                     echo "This is the start"
                     sh script: """
                         ls -al
