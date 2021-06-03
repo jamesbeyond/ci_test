@@ -1,33 +1,33 @@
 
-def first
-def second
-
 pipeline {
     agent {
         label 'master'
     }
 
+    environment {
+        dkr = load "common.groovy"
+        FISRT = dkr.first()
+        SECOND = dkr.second()
+    }
     stages {
         stage('Start') {
             steps {
                 script {
-                    dkr = load "common.groovy"
-                    first= dkr.first()
-                    second= dkr.second()
+                    
                     echo "This is the start"
                     sh script: """
                         ls -al
                         pwd
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
-                    echo " First is ${first}, second is ${second}"
+                    echo " First is ${FIRST}, second is ${SECOND}"
                 }
             }
         }
         stage('another') {
             steps {
                 script {
-                    echo "Another First is ${first}, second is ${second}"
+                    echo "Another First is ${FIRST}, second is ${FIRST}"
                 }
             }
         }
