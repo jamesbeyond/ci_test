@@ -6,7 +6,7 @@ pipeline {
 
     environment {
         dkr = load "common.groovy"
-        FISRT = dkr.first()
+        FIRST = dkr.first()
         SECOND = dkr.second()
     }
     stages {
