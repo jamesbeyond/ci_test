@@ -21,7 +21,7 @@ pipeline {
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
                     echo " First is ${FIRST}, second is ${SECOND}"
-                    dkr.func()
+                    ${dkr}.func()
                 }
             }
         }
