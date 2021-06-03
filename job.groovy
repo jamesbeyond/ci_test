@@ -20,10 +20,16 @@ pipeline {
                         pwd
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
-                    echo " Fist is ${first}, second is ${second}"
+                    echo " First is ${first}, second is ${second}"
                 }
             }
         }
-
+        stage('another') {
+            steps {
+                script {
+                    echo "Another First is ${first}, second is ${second}"
+                }
+            }
+        }
     }
 }
