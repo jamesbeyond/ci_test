@@ -21,13 +21,15 @@ pipeline {
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
                     echo " First is ${FIRST}, second is ${SECOND}"
+                    dkr.func()
                 }
             }
         }
         stage('another') {
             steps {
                 script {
-                    echo "Another First is ${FIRST}, second is ${FIRST}"
+                    echo "Another First is ${FIRST}, second is ${SECOND}"
+                    dkr.func()
                 }
             }
         }
