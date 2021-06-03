@@ -1,7 +1,7 @@
-import common
+def dkr =load "common.groovy"
 
-def first= common.first
-def second= common.second
+def first= dkr.first
+def second= dkr.second
 
 pipeline {
     agent {
