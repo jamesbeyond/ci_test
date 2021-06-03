@@ -22,7 +22,6 @@ pipeline {
                     """, label: "LIST FILE AND SHOW ENV"
                     echo " First is ${FIRST}, second is ${SECOND}"
                     println dkr.getClass()
-                    println ${dkr}.getClass()
                     println "${dkr}".getClass()
                     
                 }
