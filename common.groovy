@@ -1,3 +1,3 @@
 def first(){ return "Hello" }
-def second = "World"
+def second(){ return "World" }
 return this
