@@ -1,4 +1,4 @@
-
+def dkr
 pipeline {
     agent {
         label 'master'
