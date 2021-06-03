@@ -1,11 +1,11 @@
-def dkr
+
 pipeline {
     agent {
         label 'master'
     }
 
     environment {
-        dkr = load "common.groovy"
+        def dkr = load "common.groovy"
         FIRST = dkr.first()
         SECOND = dkr.second()
     }
