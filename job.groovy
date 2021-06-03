@@ -5,7 +5,7 @@ pipeline {
     }
 
     environment {
-        def dkr = load "common.groovy"
+        dkr = load "common.groovy"
         FIRST = dkr.first()
         SECOND = dkr.second()
     }
@@ -21,7 +21,8 @@ pipeline {
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
                     echo " First is ${FIRST}, second is ${SECOND}"
-                    ${dkr}.func()
+                    ndkr = load "common.groovy"
+                    ndkr.func()
                 }
             }
         }
