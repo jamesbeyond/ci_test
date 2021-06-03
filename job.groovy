@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     echo "Another First is ${FIRST}, second is ${SECOND}"
-                    dkr.func()
+                    ${dkr}.func()
                 }
             }
         }
