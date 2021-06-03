@@ -21,8 +21,7 @@ pipeline {
                         printenv
                     """, label: "LIST FILE AND SHOW ENV"
                     echo " First is ${FIRST}, second is ${SECOND}"
-                    println dkr.getClass()
-                    println "${dkr}".getClass()
+                    echo dkr
                     
                 }
             }
@@ -31,7 +30,7 @@ pipeline {
             steps {
                 script {
                     echo "Another First is ${FIRST}, second is ${SECOND}"
-                    ${dkr}.func()
+                    "${dkr}".func()
                 }
             }
         }
