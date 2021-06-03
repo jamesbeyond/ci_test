@@ -22,6 +22,9 @@ pipeline {
                     """, label: "LIST FILE AND SHOW ENV"
                     echo " First is ${FIRST}, second is ${SECOND}"
                     ndkr = load "common.groovy"
+                    println dkr.getClass()   
+                    println ndkr.getClass()   
+                    
                     ndkr.func()
                 }
             }
