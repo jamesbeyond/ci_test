@@ -1,4 +1,4 @@
-def dkr =load "common.groovy"
+
 
 
 
@@ -11,6 +11,7 @@ pipeline {
         stage('Start') {
             steps {
                 script {
+                    def dkr =load "common.groovy"
                     def first= dkr.first
                     def second= dkr.second
                     echo "This is the start"
