@@ -31,7 +31,7 @@ jobs:
 
   manual-check:
     runs-on: ubuntu-latest
-    environment: 'manual-approval'
+    environment: 'manual_approval'
     needs: [auto-build]
     steps:
       # Runs a set of commands using the runners shell
