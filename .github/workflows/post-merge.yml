@@ -27,5 +27,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: Test container-diff
-        run: container-diff --help
+        run: |
+          curl -LO https://storage.googleapis.com/container-diff/latest/container-diff-linux-amd64 && chmod +x container-diff-linux-amd64 && sudo mv container-diff-linux-amd64 /usr/local/bin/container-diff
+          container-diff --help
 
